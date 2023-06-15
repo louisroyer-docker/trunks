@@ -52,7 +52,7 @@ If you have the following architecture:
 Packets from `Left` forwarded by `R1` to `trunks` will be forwarded to `R2` by `trunks`.
 Packets from `Right` forwarded by `R2` to `trunks` will be forwarded to `R1` by `trunks`.
 
-For example, is `R1` IP is 10.0.214.3` and `R2` IP is `10.0.213.3`, then you can use the following environment variables.
+For example, is `R1` IP is `10.0.214.3` and `R2` IP is `10.0.213.3`, then you can use the following environment variables.
 
 ```yaml
 environment:
