@@ -7,7 +7,7 @@ command: [" "]
 ```
 
 ## Environment variables 
-- On DockerHub: [`louisroyer/ueransim-ue`](https://hub.docker.com/repository/docker/louisroyer/ueransim-ue)
+- On DockerHub: [`louisroyer/trunks`](https://hub.docker.com/repository/docker/louisroyer/trunks)
 
 Environment variable used to select templating system:
 ```yaml
