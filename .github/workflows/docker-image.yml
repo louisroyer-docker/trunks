@@ -7,7 +7,7 @@ on:
     paths:
       - 'trunks/**'
     branches: [ master ]
-    workwlow_dispatch:
+  workflow_dispatch:
 
 jobs:
    docker:
