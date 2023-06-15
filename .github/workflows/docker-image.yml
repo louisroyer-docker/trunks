@@ -7,6 +7,7 @@ on:
     paths:
       - 'trunks/**'
     branches: [ master ]
+    workwlow_dispatch:
 
 jobs:
    docker:
