@@ -40,5 +40,7 @@ sed \
 	-e "s/%NIC_GW/${NIC_GW}/g" \
 	-e "s/%BW_FORWARD/${BW_FORWARD}/g" \
 	-e "s/%BW_RETURN/${BW_RETURN}/g" \
+	-e "s/%DELAY_VALUE/${DELAY_VALUE}/g" \
+	-e "s/%DELAY_OFFSET/${DELAY_OFFSET}/g" \
 	-e "s/%ACM/${ACM_SUB}/g" \
 "${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
