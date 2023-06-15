@@ -14,6 +14,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY ./routing-default.sh /usr/local/bin/routing-default.sh
 ENV ROUTING_SCRIPT=""
 
 COPY ./template-script.sh /usr/local/bin/template-script.sh
