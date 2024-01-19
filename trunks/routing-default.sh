@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Copyright 2024 Louis Royer. All rights reserved.
+# Use of this source code is governed by a MIT-style license that can be
+# found in the LICENSE file.
+# SPDX-License-Identifier: MIT
 
 set -e
 if [ -z "$ROUTING_GW_IP" ]; then
@@ -32,4 +36,3 @@ ip rule add from "$ROUTING_ST_IP" table "$TABLE_TO_ST"
 
 ip route add default via "$ROUTING_GW_NEXT_HOP" table "$TABLE_TO_GW" proto static
 ip route add default via "$ROUTING_ST_NEXT_HOP" table "$TABLE_TO_ST" proto static
-
