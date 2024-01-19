@@ -39,13 +39,22 @@ for ACM_L in ${ACM}; do
 	fi
 done
 
-
-sed \
-	-e "s/%NIC_ST/${NIC_ST}/g" \
-	-e "s/%NIC_GW/${NIC_GW}/g" \
-	-e "s/%BW_FORWARD/${BW_FORWARD}/g" \
-	-e "s/%BW_RETURN/${BW_RETURN}/g" \
-	-e "s/%DELAY_VALUE/${DELAY_VALUE}/g" \
-	-e "s/%DELAY_OFFSET/${DELAY_OFFSET}/g" \
-	-e "s/%ACM/${ACM_SUB}/g" \
-"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
+awk \
+	-v NIC_ST="${NIC_ST}" \
+	-v NIC_GW="${NIC_GW}" \
+	-v BW_FORWARD="${BW_FORWARD}" \
+	-v BW_RETURN="${BW_RETURN}" \
+	-v DELAY_VALUE="${DELAY_VALUE}" \
+	-v DELAY_OFFSET="${DELAY_OFFSET}" \
+	-v ACM="${ACM_SUB}" \
+	'{
+		sub(/%NIC_ST/, NIC_ST);
+		sub(/%NIC_GW/, NIC_GW);
+		sub(/%BW_FORWARD/, BW_FORWARD);
+		sub(/%BW_RETURN/, BW_RETURN);
+		sub(/%DELAY_VALUE/, DELAY_VALUE);
+		sub(/%DELAY_OFFSET/, DELAY_OFFSET);
+		sub(/%ACM/, ACM);
+		print;
+	}' \
+	"${CONFIG_TEMPLATE}" > "${CONFIG_FILE}"
