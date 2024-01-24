@@ -16,7 +16,7 @@ environment:
   TEMPLATE_SCRIPT: "template-script.sh"
   TEMPLATE_SCRIPT_ARGS: ""
   CONFIG_FILE: "/etc/trunks/trunks.yaml"
-  CONFIG_TEMPLATE: "/etc/trunks/template.yaml"
+  CONFIG_TEMPLATE: "/usr/local/share/trunks/template.yaml"
 ```
 
 Environment variables for templating:

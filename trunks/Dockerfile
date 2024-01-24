@@ -18,17 +18,13 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     && apt-get upgrade -qy \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY ./routing-default.sh /usr/local/bin/routing-default.sh
-ENV ROUTING_SCRIPT=""
-
-COPY ./template-script.sh /usr/local/bin/template-script.sh
-ENV TEMPLATE_SCRIPT="template-script.sh"
-ENV TEMPLATE_SCRIPT_ARGS=""
-
-COPY ./template.yaml /etc/trunks/template.yaml
-ENV CONFIG_FILE="/etc/trunks/trunks.yaml"
-ENV CONFIG_TEMPLATE="/etc/trunks/template.yaml"
+COPY ./*.sh /usr/local/bin/
+COPY ./template.yaml /usr/local/share/trunks/template.yaml
+ENV ROUTING_SCRIPT="" \
+    TEMPLATE_SCRIPT="template-script.sh" \
+    TEMPLATE_SCRIPT_ARGS="" \
+    CONFIG_FILE="/etc/trunks/trunks.yaml" \
+    CONFIG_TEMPLATE="/usr/local/share/trunks/template.yaml"
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["--help"]
