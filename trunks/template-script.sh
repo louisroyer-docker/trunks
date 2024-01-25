@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: MIT
 
 set -e
+mkdir -p "$(dirname "${CONFIG_FILE}")"
+
 if [ -z "$NIC_ST" ]; then
 	echo "Missing mandatory environment variable (NIC_ST)." > /dev/stderr
 	exit 1
