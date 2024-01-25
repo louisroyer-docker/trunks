@@ -6,7 +6,7 @@ By default, configuration file from templating is used if no `--config` or `-c` 
 command: [" "]
 ```
 
-## Environment variables 
+## Environment variables
 - On DockerHub: [`louisroyer/trunks`](https://hub.docker.com/repository/docker/louisroyer/trunks)
 
 Environment variable used to select templating system:
@@ -62,4 +62,3 @@ environment:
   ROUTING_ST_IP: "10.0.213.4"
   ROUTING_ST_NEXT_HOP: "10.0.213.3"
 ```
-
