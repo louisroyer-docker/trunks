@@ -1,10 +1,11 @@
 # Trunks Docker Image
 The following image includes a build of [trunks](https://github.com/shynuu/trunks).
-By default, configuration file from templating is used if no `--config` or `-c` is passed as argument. To start without argument, use:
 
-```yaml
-command: [" "]
-```
+> [!TIP]
+> By default, configuration file from templating is used if no `--config` or `-c` is passed as argument. To start without argument, use:
+> ```yaml
+> command: [" "]
+> ```
 
 ## Environment variables
 - On DockerHub: [`louisroyer/trunks`](https://hub.docker.com/repository/docker/louisroyer/trunks)
